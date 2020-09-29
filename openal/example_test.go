@@ -2,9 +2,10 @@ package openal_test
 
 import (
 	"fmt"
-	"github.com/timshannon/go-openal/openal"
 	"io/ioutil"
 	"time"
+
+	openal "./"
 )
 
 func ExamplePlay() {

@@ -5,3 +5,8 @@
 *.cgo?.*
 _cgo_*
 _obj
+
+# IDE Files
+.vscode/*
+.vs/*
+.idea/*

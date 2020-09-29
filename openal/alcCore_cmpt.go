@@ -1,4 +1,4 @@
-// +build !al_cmpt
+// +build al_cmpt
 
 // Forked by Tim Shannon 2012
 // Copyright 2009 Peter H. Froehlich. All rights reserved.
@@ -85,7 +85,7 @@ type Device struct {
 }
 
 func (self *Device) getError() uint32 {
-	return uint32(C.alcGetError((*C.struct_ALCdevice)(unsafe.Pointer(self.handle))))
+	return uint32(C.alcGetError((*C.struct_ALCdevice_struct)(unsafe.Pointer(self.handle))))
 }
 
 // Err() returns the most recent error generated
@@ -118,8 +118,8 @@ func OpenDevice(name string) *Device {
 	return &Device{uintptr((unsafe.Pointer)(h))}
 }
 
-func (self *Device) cHandle() *C.struct_ALCdevice {
-	return (*C.struct_ALCdevice)(unsafe.Pointer(self.handle))
+func (self *Device) cHandle() *C.struct_ALCdevice_struct {
+	return (*C.struct_ALCdevice_struct)(unsafe.Pointer(self.handle))
 }
 
 func (self *Device) CloseDevice() bool {
@@ -233,8 +233,8 @@ type Context struct {
 // details).
 var NullContext Context
 
-func (self *Context) cHandle() *C.struct_ALCcontext {
-	return (*C.struct_ALCcontext)(unsafe.Pointer(self.handle))
+func (self *Context) cHandle() *C.struct_ALCcontext_struct {
+	return (*C.struct_ALCcontext_struct)(unsafe.Pointer(self.handle))
 }
 
 // Renamed, was MakeContextCurrent.
