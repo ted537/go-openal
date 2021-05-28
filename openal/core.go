@@ -92,11 +92,9 @@ package openal
 /*
 #cgo windows CFLAGS: -I${SRCDIR}/include
 #cgo windows,amd64 LDFLAGS: -L${SRCDIR}/lib -lopenal64 -lstdc++ -lole32 -lwinmm
-#cgo windows,386 LDFLAGS: -L${SRCDIR}/lib -lOpenAL32 -lstdc++ -lole32 -lwinmm
+#cgo windows,386 LDFLAGS: -L${SRCDIR}/lib -lopenal32 -lstdc++ -lole32 -lwinmm
 
-#cgo linux CFLAGS: -I${SRCDIR}/include
-#cgo linux,amd64 LDFLAGS: -L${SRCDIR}/lib -lopenal
-
+#cgo linux LDFLAGS: -lopenal
 #cgo darwin LDFLAGS: -framework OpenAL
 
 #include <stdlib.h>
