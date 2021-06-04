@@ -1,3 +1,3 @@
-module github.com/Windblade-GR01/go-openal
+module github.com/ikemen-engine/go-openal
 
 go 1.16
